@@ -1,0 +1,16 @@
+{% extends "appTemp/base_generic.html" %}
+
+{% block content %}
+    <h1>Information</h1>
+    <p>Update Covid-19 Information in {{ name }} Today</p>
+    <ul class="list-group" style="width: 600px;">
+        <li class="list-group-item">
+            <div style="white-space:pre">Positive Cases&#9;: {{ positif }}</div>
+            <div style="white-space:pre">Recovery&#9;&#9;: {{ sembuh }}</div>
+            <div style="white-space:pre">Death&#9;&#9;&#9;: {{ meninggal }}</div>
+            <div style="text-align: right;">
+                
+            </div>    
+        </li>
+    </ul>
+{% endblock %}

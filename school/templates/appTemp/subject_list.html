@@ -1,0 +1,20 @@
+{% extends "appTemp/base_generic.html" %}
+
+{% block content %}
+    <h1>All Subject Page</h1>
+    <p>Registered subject in this school:</p>
+    <ul class="list-group" style="width: 600px;">
+        {% for subject in subject_list %}
+        <li class="list-group-item">
+            <div>Name : {{ subject.subject_name }}</div>
+            <div style="text-align: right;">
+                <a href="{% url 'subject_edit' subject.subject_id %}" class="btn btn-success">Edit</a>
+                <a href="{% url 'subject_delete' subject.subject_id %}" class="btn btn-danger">Delete</a>    
+            </div>    
+        </li>
+        {% endfor %}
+    </ul>
+    <p>
+        <a href="{% url 'subject_add' %}" class="btn btn-info">Add New Subject</a>
+    </p>
+{% endblock %}

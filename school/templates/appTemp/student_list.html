@@ -1,0 +1,21 @@
+{% extends "appTemp/base_generic.html" %}
+
+{% block content %}
+    <h1>All Student Page</h1>
+    <p>Registered student in this school:</p>
+    <ul class="list-group" style="width: 600px;">
+        {% for student in student_list %}
+        <li class="list-group-item">
+            <div>Name : {{ student.student_name }}</div>
+            <div>Email : {{ student.student_email }}</div>
+            <div style="text-align: right;">
+                <a href="{% url 'student_edit' student.student_id %}" class="btn btn-success">Edit</a>
+                <a href="{% url 'student_delete' student.student_id %}" class="btn btn-danger">Delete</a>    
+            </div>    
+        </li>
+        {% endfor %}
+    </ul>
+    <p>
+        <a href="{% url 'student_add' %}" class="btn btn-info">Add New Student</a>
+    </p>
+{% endblock %}

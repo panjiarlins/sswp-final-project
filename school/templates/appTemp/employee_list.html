@@ -1,0 +1,21 @@
+{% extends "appTemp/base_generic.html" %}
+
+{% block content %}
+    <h1>All Employee Page</h1>
+    <p>Registered employee in this school:</p>
+    <ul class="list-group" style="width: 600px;">
+        {% for employee in employee_list %}
+        <li class="list-group-item">
+            <div>Name : {{ employee.employee_name }}</div>
+            <div>Email : {{ employee.employee_email }}</div>
+            <div style="text-align: right;">
+                <a href="{% url 'employee_edit' employee.employee_id %}" class="btn btn-success">Edit</a>
+                <a href="{% url 'employee_delete' employee.employee_id %}" class="btn btn-danger">Delete</a>    
+            </div>    
+        </li>
+        {% endfor %}
+    </ul>
+    <p>
+        <a href="{% url 'employee_add' %}" class="btn btn-info">Add New Employee</a>
+    </p>
+{% endblock %}
