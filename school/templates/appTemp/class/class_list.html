@@ -1,0 +1,44 @@
+{% extends "appTemp/base_generic.html" %}
+
+{% block content %}
+    <h1>All Class Page</h1>
+    <p>Registered class in this school:</p>
+    <form method="POST" action="" class="form-inline">
+        {% csrf_token %}
+        <input style="width: 700px;" name="name" type="text" class="form-control" placeholder="Type to search ...."/>
+        <select name="searchby" class="form-control">
+            <option value="class_name">Class Name</option>
+            <option value="class_batch">Batch</option>
+        </select>
+        <button type="submit" class="btn btn-info">Search</button>
+    </form>
+    <br/>
+    <table class="table table-hover">
+        <thead>
+            <tr class="active">
+                <td><strong>Class Name</strong></td>
+                <td><strong>Batch</strong></td>
+                <td><strong>Advisor</strong></td>
+                <td><strong>Subject</strong></td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for class in class_list %}
+            <tr>
+                <td>{{ class.class_name }}</td>
+                <td>{{ class.class_batch }}</td>
+                <td>{{ class.class_advisor }}</td>
+                <td>{{ class.class_subject.all|join:', ' }}</td>
+                <td>
+                    <a href="{% url 'class_edit' class.class_id %}" class="btn btn-success">Edit</a>
+                    <a href="{% url 'class_delete' class.class_id %}" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br/>
+    <p>
+        <a href="{% url 'class_add' %}" class="btn btn-info">Add New Class</a>
+    </p>
+{% endblock %}

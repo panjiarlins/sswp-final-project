@@ -1,5 +1,5 @@
 from django import forms
-from .models import Subject, Employee, Student
+from .models import Subject, Employee, Student, Class
 
 class SubjectForm(forms.ModelForm):
     class Meta:
@@ -9,6 +9,17 @@ class SubjectForm(forms.ModelForm):
         widgets = {
             'subject_name' : forms.TextInput(attrs={'class': 'form-control'}),
             'subject_description' : forms.Textarea(attrs={'class': 'form-control', 'rows': '5','style': 'width: 600px;'}),
+        }
+
+class ClassForm(forms.ModelForm):
+    class Meta:
+        model = Class
+        fields = '__all__'
+
+        widgets = {
+            'class_name' : forms.TextInput(attrs={'class': 'form-control'}),
+            'class_batch' : forms.TextInput(attrs={'class': 'form-control'}),
+            
         }
 
 class EmployeeForm(forms.ModelForm):

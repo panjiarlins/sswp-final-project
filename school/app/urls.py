@@ -2,6 +2,7 @@ from django.urls import path, include
 from . import views
 from .controller import registration_controller
 from .controller import subject_controller
+from .controller import class_controller
 from .controller import employee_controller
 from .controller import student_controller
 
@@ -15,6 +16,11 @@ urlpatterns = [
     path('subject/add/', subject_controller.subject_add, name='subject_add'),
     path('subject/edit/<int:subject_id>/', subject_controller.subject_edit, name='subject_edit'),
     path('subject/delete/<int:subject_id>/', subject_controller.subject_delete, name='subject_delete'),
+
+    path('class/', class_controller.class_list, name='class'),
+    path('class/add/', class_controller.class_add, name='class_add'),
+    path('class/edit/<int:class_id>/', class_controller.class_edit, name='class_edit'),
+    path('class/delete/<int:class_id>/', class_controller.class_delete, name='class_delete'),
 
     path('employee/', employee_controller.employee_list, name='employee'),
     path('employee/add/', employee_controller.employee_add, name='employee_add'),
