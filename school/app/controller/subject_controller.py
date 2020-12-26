@@ -7,8 +7,18 @@ from app.models import Subject
 from app.forms import SubjectForm
 
 def subject_list(request):
+    if request.method == 'POST':
+        searchby = request.POST['searchby']
+        req = request.POST.dict()
+        name = req['name']
+        if searchby == 'subject_name':
+            subjects = Subject.objects.filter(subject_name__contains=name).order_by('subject_name')
+        else:
+            subjects = Subject.objects.filter(subject_description__contains=name).order_by('subject_name')
+    else:
+        subjects = Subject.objects.all().order_by('subject_name')
     context = {
-        'subject_list' : Subject.objects.all(),
+        'subject_list' : subjects,
     }
     return render(request, 'appTemp/subject_list.html', context)
 

@@ -3,17 +3,37 @@
 {% block content %}
     <h1>All Subject Page</h1>
     <p>Registered subject in this school:</p>
-    <ul class="list-group" style="width: 600px;">
-        {% for subject in subject_list %}
-        <li class="list-group-item">
-            <div>Name : {{ subject.subject_name }}</div>
-            <div style="text-align: right;">
-                <a href="{% url 'subject_edit' subject.subject_id %}" class="btn btn-success">Edit</a>
-                <a href="{% url 'subject_delete' subject.subject_id %}" class="btn btn-danger">Delete</a>    
-            </div>    
-        </li>
-        {% endfor %}
-    </ul>
+    <form method="POST" action="" class="form-inline">
+        {% csrf_token %}
+        <input style="width: 700px;" name="name" type="text" class="form-control" placeholder="Type to search ...."/>
+        <select name="searchby" class="form-control">
+            <option value="subject_name">Subject Name</option>
+            <option value="subject_description">Description</option>
+        </select>
+        <button type="submit" class="btn btn-info">Search</button>
+    </form>
+    <br/>
+    <table class="table table-hover">
+        <thead>
+            <tr class="active">
+                <td><strong>Subject Name</strong></td>
+                <td><strong>Description</strong></td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for subject in subject_list %}
+            <tr>
+                <td>{{ subject.subject_name }}</td>
+                <td style="max-width: 400px;">{{ subject.subject_description }}</td>
+                <td>
+                    <a href="{% url 'subject_edit' subject.subject_id %}" class="btn btn-success">Edit</a>
+                    <a href="{% url 'subject_delete' subject.subject_id %}" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br/>
     <p>
         <a href="{% url 'subject_add' %}" class="btn btn-info">Add New Subject</a>
     </p>
