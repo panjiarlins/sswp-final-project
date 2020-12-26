@@ -18,6 +18,8 @@ class ClassForm(forms.ModelForm):
 
         widgets = {
             'class_name' : forms.TextInput(attrs={'class': 'form-control'}),
+            'class_advisor' : forms.Select(attrs={'class': 'form-control'}),
+            'class_subject' : forms.CheckboxSelectMultiple(attrs={'class': 'checkbox'}),
             'class_batch' : forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'yyyy'}),
         }
 
@@ -28,6 +30,7 @@ class ExtracurricularForm(forms.ModelForm):
 
         widgets = {
             'extracurricular_name' : forms.TextInput(attrs={'class': 'form-control'}),
+            'extracurricular_advisor' : forms.Select(attrs={'class': 'form-control'}),
             'extracurricular_description' : forms.Textarea(attrs={'class': 'form-control', 'rows': '5','style': 'width: 600px;'}),
             
         }
@@ -53,6 +56,7 @@ class EmployeeForm(forms.ModelForm):
             'employee_email' : forms.EmailInput(attrs={'class': 'form-control', 'placeholder' : 'name@example.com'}),
             'employee_phone' : forms.TextInput(attrs={'class': 'form-control'}),
             'employee_address' : forms.Textarea(attrs={'class': 'form-control', 'rows': '5','style': 'width: 600px;'}),
+            'employee_position' : forms.CheckboxSelectMultiple(attrs={'class': 'checkbox'}),
         }
 
 class StudentForm(forms.ModelForm):
@@ -66,4 +70,6 @@ class StudentForm(forms.ModelForm):
             'student_email' : forms.EmailInput(attrs={'class': 'form-control', 'placeholder' : 'name@example.com'}),
             'student_phone' : forms.TextInput(attrs={'class': 'form-control'}),
             'student_address' : forms.Textarea(attrs={'class': 'form-control', 'rows': '5','style': 'width: 600px;'}),
+            'student_class' : forms.CheckboxSelectMultiple(attrs={'class': 'checkbox'}),
+            'student_extracurricular' : forms.CheckboxSelectMultiple(attrs={'class': 'checkbox'}),
         }
