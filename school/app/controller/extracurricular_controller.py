@@ -5,6 +5,7 @@ from django.forms.models import model_to_dict
 from django.contrib.auth.decorators import login_required
 from app.models import Extracurricular
 from app.forms import ExtracurricularForm
+from django.core.paginator import Paginator
 
 def extracurricular_list(request):
     if request.method == 'POST':
@@ -17,8 +18,13 @@ def extracurricular_list(request):
             extracurriculars = Extracurricular.objects.filter(extracurricular_description__contains=name).order_by('extracurricular_name')
     else:
         extracurriculars = Extracurricular.objects.all().order_by('extracurricular_name')
+    
+    paginator = Paginator(extracurriculars, 5)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
     context = {
-        'extracurricular_list' : extracurriculars,
+        'extracurricular_list' : page_obj,
     }
     return render(request, 'appTemp/extracurricular/extracurricular_list.html', context)
 
