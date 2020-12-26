@@ -9,4 +9,4 @@ class Employment(models.Model):
         app_label = 'app'
         
     def __str__(self):
-        return f'{self.employment_name} {self.employment_description}'
+        return f'{self.employment_name}'

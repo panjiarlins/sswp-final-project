@@ -11,4 +11,4 @@ class Extracurricular(models.Model):
         app_label = 'app'
     
     def __str__(self):
-        return f'{self.extracurricular_name} {self.extracurricular_advisor} {self.extracurricular_description}'
+        return f'{self.extracurricular_name}'

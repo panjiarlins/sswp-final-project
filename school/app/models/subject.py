@@ -9,4 +9,4 @@ class Subject(models.Model):
         app_label = 'app'
     
     def __str__(self):
-        return f'{self.subject_name} {self.subject_description}'
+        return f'{self.subject_name}'

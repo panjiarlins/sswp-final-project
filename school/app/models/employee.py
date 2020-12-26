@@ -14,4 +14,4 @@ class Employee(models.Model):
         app_label = 'app'
 
     def __str__(self):
-        return f'{self.employee_name} {self.employee_DOB} {self.employee_email} {self.employee_phone} {self.employee_address} {self.employee_position}'
+        return f'{self.employee_name} {self.employee_email}'

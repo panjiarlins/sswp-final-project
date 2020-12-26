@@ -13,4 +13,4 @@ class Student(models.Model):
     student_extracurricular = models.ManyToManyField(Extracurricular)
 
     def __str__(self):
-        return f'{self.student_name} {self.student_DOB} {self.student_email} {self.student_phone} {self.student_address} {self.student_class} {self.student_extracurricular}'
+        return f'{self.student_name} {self.student_email}'

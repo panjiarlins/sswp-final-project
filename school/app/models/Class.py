@@ -13,4 +13,4 @@ class Class(models.Model):
         app_label = 'app'
     
     def __str__(self):
-        return f'{self.class_name} {self.class_batch} {self.class_advisor} {self.class_subject}'
+        return f'{self.class_name} {self.class_batch}'
