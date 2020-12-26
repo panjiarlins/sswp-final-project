@@ -24,7 +24,7 @@ def student_list(request):
     context = {
         'student_list' : students,
     }
-    return render(request, 'appTemp/student_list.html', context)
+    return render(request, 'appTemp/student/student_list.html', context)
 
 @login_required
 def student_add(request):
@@ -38,7 +38,7 @@ def student_add(request):
     context = {
         'form': form
     }
-    return render(request, 'appTemp/student_add.html', context=context)
+    return render(request, 'appTemp/student/student_add.html', context=context)
 
 @login_required
 def student_edit(request, student_id):
@@ -56,7 +56,7 @@ def student_edit(request, student_id):
         'form': form,
         'type': 'edit',
     }
-    return render(request, 'appTemp/student_add.html', context=context)
+    return render(request, 'appTemp/student/student_add.html', context=context)
 
 @login_required
 def student_delete(request, student_id):
@@ -67,4 +67,4 @@ def student_delete(request, student_id):
     context = {
         'student': student
     }
-    return render(request, 'appTemp/student_delete.html', context=context)
+    return render(request, 'appTemp/student/student_delete.html', context=context)

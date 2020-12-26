@@ -38,7 +38,7 @@ def employee_add(request):
     context = {
         'form': form
     }
-    return render(request, 'appTemp/employee_add.html', context)
+    return render(request, 'appTemp/employee/employee_add.html', context)
 
 @login_required
 def employee_edit(request, employee_id):
@@ -56,7 +56,7 @@ def employee_edit(request, employee_id):
         'form': form,
         'type': 'edit',
     }
-    return render(request, 'appTemp/employee_add.html', context)
+    return render(request, 'appTemp/employee/employee_add.html', context)
 
 @login_required
 def employee_delete(request, employee_id):
@@ -67,4 +67,4 @@ def employee_delete(request, employee_id):
     context = {
         'employee': employee
     }
-    return render(request, 'appTemp/employee_delete.html', context=context)
+    return render(request, 'appTemp/employee/employee_delete.html', context=context)

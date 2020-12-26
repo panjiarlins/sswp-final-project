@@ -20,7 +20,7 @@ def subject_list(request):
     context = {
         'subject_list' : subjects,
     }
-    return render(request, 'appTemp/subject_list.html', context)
+    return render(request, 'appTemp/subject/subject_list.html', context)
 
 @login_required
 def subject_add(request):
@@ -34,7 +34,7 @@ def subject_add(request):
     context = {
         'form': form
     }
-    return render(request, 'appTemp/subject_add.html', context=context)
+    return render(request, 'appTemp/subject/subject_add.html', context=context)
 
 @login_required
 def subject_edit(request, subject_id):
@@ -52,7 +52,7 @@ def subject_edit(request, subject_id):
         'form': form,
         'type': 'edit',
     }
-    return render(request, 'appTemp/subject_add.html', context)
+    return render(request, 'appTemp/subject/subject_add.html', context)
 
 @login_required
 def subject_delete(request, subject_id):
@@ -63,4 +63,4 @@ def subject_delete(request, subject_id):
     context = {
         'subject': subject
     }
-    return render(request, 'appTemp/subject_delete.html', context=context)
+    return render(request, 'appTemp/subject/subject_delete.html', context=context)
