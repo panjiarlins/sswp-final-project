@@ -5,6 +5,7 @@ from django.forms.models import model_to_dict
 from django.contrib.auth.decorators import login_required
 from app.models import Student
 from app.forms import StudentForm
+from django.core.paginator import Paginator
 
 def student_list(request):
     if request.method == 'POST':
@@ -21,8 +22,13 @@ def student_list(request):
             students = Student.objects.filter(student_address__contains=name).order_by('-student_DOB')
     else:
         students = Student.objects.all().order_by('-student_DOB')
+    
+    paginator = Paginator(students, 10)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
     context = {
-        'student_list' : students,
+        'student_list' : page_obj,
     }
     return render(request, 'appTemp/student/student_list.html', context)
 
