@@ -7,8 +7,22 @@ from app.models import Employee
 from app.forms import EmployeeForm
 
 def employee_list(request):
+    if request.method == 'POST':
+        searchby = request.POST['searchby']
+        req = request.POST.dict()
+        name = req['name']
+        if searchby == 'employee_name':
+            employees = Employee.objects.filter(employee_name__contains=name).order_by('-employee_DOB')
+        elif searchby == 'employee_email':
+            employees = Employee.objects.filter(employee_email__contains=name).order_by('-employee_DOB')
+        elif searchby == 'employee_phone':
+            employees = Employee.objects.filter(employee_phone__contains=name).order_by('-employee_DOB')
+        elif searchby == 'employee_address':
+            employees = Employee.objects.filter(employee_address__contains=name).order_by('-employee_DOB')
+    else:
+        employees = Employee.objects.all().order_by('-employee_DOB')
     context = {
-        'employee_list' : Employee.objects.all(),
+        'employee_list' : employees,
     }
     return render(request, 'appTemp/employee_list.html', context)
 

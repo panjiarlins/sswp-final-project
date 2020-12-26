@@ -3,18 +3,47 @@
 {% block content %}
     <h1>All Employee Page</h1>
     <p>Registered employee in this school:</p>
-    <ul class="list-group" style="width: 600px;">
-        {% for employee in employee_list %}
-        <li class="list-group-item">
-            <div>Name : {{ employee.employee_name }}</div>
-            <div>Email : {{ employee.employee_email }}</div>
-            <div style="text-align: right;">
-                <a href="{% url 'employee_edit' employee.employee_id %}" class="btn btn-success">Edit</a>
-                <a href="{% url 'employee_delete' employee.employee_id %}" class="btn btn-danger">Delete</a>    
-            </div>    
-        </li>
-        {% endfor %}
-    </ul>
+    <form method="POST" action="" class="form-inline">
+        {% csrf_token %}
+        <input style="width: 700px;" name="name" type="text" class="form-control" placeholder="Type to search ...."/>
+        <select name="searchby" class="form-control">
+            <option value="employee_name">Employee Name</option>
+            <option value="employee_email">Email</option>
+            <option value="employee_phone">Phone</option>
+            <option value="employee_address">Address</option>
+        </select>
+        <button type="submit" class="btn btn-info">Search</button>
+    </form>
+    <br/>
+    <table class="table table-hover">
+        <thead>
+            <tr class="active">
+                <td><strong>Employee Name</strong></td>
+                <td><strong>Date of Birth</strong></td>
+                <td><strong>Email</strong></td>
+                <td><strong>Phone</strong></td>
+                <td><strong>Address</strong></td>
+                <td><strong>Position</strong></td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for employee in employee_list %}
+            <tr>
+                <td>{{ employee.employee_name }}</td>
+                <td>{{ employee.employee_DOB }}</td>
+                <td>{{ employee.employee_email }}</td>
+                <td>{{ employee.employee_phone }}</td>
+                <td>{{ employee.employee_address }}</td>
+                <td>{{ employee.employee_position.all|join:', ' }}</td>
+                <td>
+                    <a href="{% url 'employee_edit' employee.employee_id %}" class="btn btn-success">Edit</a>
+                    <a href="{% url 'employee_delete' employee.employee_id %}" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br/>
     <p>
         <a href="{% url 'employee_add' %}" class="btn btn-info">Add New Employee</a>
     </p>
