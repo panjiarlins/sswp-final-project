@@ -5,6 +5,7 @@ from django.forms.models import model_to_dict
 from django.contrib.auth.decorators import login_required
 from app.models import Subject
 from app.forms import SubjectForm
+from django.core.paginator import Paginator
 
 def subject_list(request):
     if request.method == 'POST':
@@ -17,8 +18,13 @@ def subject_list(request):
             subjects = Subject.objects.filter(subject_description__contains=name).order_by('subject_name')
     else:
         subjects = Subject.objects.all().order_by('subject_name')
+    
+    paginator = Paginator(subjects, 5)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
     context = {
-        'subject_list' : subjects,
+        'subject_list' : page_obj,
     }
     return render(request, 'appTemp/subject/subject_list.html', context)
 

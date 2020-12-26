@@ -37,4 +37,25 @@
     <p>
         <a href="{% url 'subject_add' %}" class="btn btn-info">Add New Subject</a>
     </p>
+    <center>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                {% if subject_list.has_previous %}
+                    <li><a href="?page=1" class="page-link">&laquo; First</a></li>
+                    <li><a href="?page={{ subject_list.previous_page_number }}" class="page-link">Previous</a></li>
+                {% endif %}
+
+                <li>
+                    <span class="current page-item">
+                        Page {{ subject_list.number }} of {{ subject_list.paginator.num_pages }}
+                    </span>
+                </li>
+
+                {% if subject_list.has_next %}
+                    <li><a href="?page={{ subject_list.next_page_number }}" class="page-link">Next</a></li>
+                    <li><a href="?page={{ subject_list.paginator.num_pages }}" class="page-link">Last &raquo;</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </center>
 {% endblock %}
