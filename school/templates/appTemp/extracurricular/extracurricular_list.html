@@ -1,0 +1,42 @@
+{% extends "appTemp/base_generic.html" %}
+
+{% block content %}
+    <h1>All Extracurricular Page</h1>
+    <p>Registered extracurricular in this school:</p>
+    <form method="POST" action="" class="form-inline">
+        {% csrf_token %}
+        <input style="width: 700px;" name="name" type="text" class="form-control" placeholder="Type to search ...."/>
+        <select name="searchby" class="form-control">
+            <option value="extracurricular_name">Extracurricular Name</option>
+            <option value="extracurricular_description">Description</option>
+        </select>
+        <button type="submit" class="btn btn-info">Search</button>
+    </form>
+    <br/>
+    <table class="table table-hover">
+        <thead>
+            <tr class="active">
+                <td><strong>Extracurricular Name</strong></td>
+                <td><strong>Advisor</strong></td>
+                <td><strong>Description</strong></td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for extracurricular in extracurricular_list %}
+            <tr>
+                <td>{{ extracurricular.extracurricular_name }}</td>
+                <td>{{ extracurricular.extracurricular_advisor }}</td>
+                <td>{{ extracurricular.extracurricular_description }}</td>
+                <td>
+                    <a href="{% url 'extracurricular_edit' extracurricular.extracurricular_id %}" class="btn btn-success">Edit</a>
+                    <a href="{% url 'extracurricular_delete' extracurricular.extracurricular_id %}" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br/>
+    <p>
+        <a href="{% url 'extracurricular_add' %}" class="btn btn-info">Add New Extracurricular</a>
+    </p>
+{% endblock %}

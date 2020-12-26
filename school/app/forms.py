@@ -1,5 +1,5 @@
 from django import forms
-from .models import Subject, Employee, Student, Class
+from .models import Subject, Employee, Student, Class, Extracurricular
 
 class SubjectForm(forms.ModelForm):
     class Meta:
@@ -19,6 +19,16 @@ class ClassForm(forms.ModelForm):
         widgets = {
             'class_name' : forms.TextInput(attrs={'class': 'form-control'}),
             'class_batch' : forms.TextInput(attrs={'class': 'form-control'}),
+        }
+
+class ExtracurricularForm(forms.ModelForm):
+    class Meta:
+        model = Extracurricular
+        fields = '__all__'
+
+        widgets = {
+            'extracurricular_name' : forms.TextInput(attrs={'class': 'form-control'}),
+            'extracurricular_batch' : forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'yyyy'}),
             
         }
 

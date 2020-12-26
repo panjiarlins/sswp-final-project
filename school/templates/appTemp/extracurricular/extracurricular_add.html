@@ -1,0 +1,22 @@
+{% extends "appTemp/base_generic.html" %}
+
+{% block content %}
+{% if type != 'edit' %}
+    <p class="h1">Add a Extracurricular</p>
+{% else %}
+    <p class="h1">Edit a Extracurricular</p>
+{% endif %}
+    <div class="form-group">
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <br/>
+            {% if type != 'edit' %}
+                <input type="submit" value="Add" class="btn btn-info"/>
+            {% else %}
+                <input type="submit" value="Update" class="btn btn-info"/>
+            {% endif %}
+                <a href="{% url 'extracurricular' %}" class="btn btn-danger">Cancel</a>
+        </form>
+    </div>
+{% endblock %}

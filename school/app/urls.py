@@ -3,6 +3,7 @@ from . import views
 from .controller import registration_controller
 from .controller import subject_controller
 from .controller import class_controller
+from .controller import extracurricular_controller
 from .controller import employee_controller
 from .controller import student_controller
 
@@ -21,6 +22,11 @@ urlpatterns = [
     path('class/add/', class_controller.class_add, name='class_add'),
     path('class/edit/<int:class_id>/', class_controller.class_edit, name='class_edit'),
     path('class/delete/<int:class_id>/', class_controller.class_delete, name='class_delete'),
+
+    path('extracurricular/', extracurricular_controller.extracurricular_list, name='extracurricular'),
+    path('extracurricular/add/', extracurricular_controller.extracurricular_add, name='extracurricular_add'),
+    path('extracurricular/edit/<int:extracurricular_id>/', extracurricular_controller.extracurricular_edit, name='extracurricular_edit'),
+    path('extracurricular/delete/<int:extracurricular_id>/', extracurricular_controller.extracurricular_delete, name='extracurricular_delete'),
 
     path('employee/', employee_controller.employee_list, name='employee'),
     path('employee/add/', employee_controller.employee_add, name='employee_add'),
