@@ -24,7 +24,7 @@ def employee_list(request):
     context = {
         'employee_list' : employees,
     }
-    return render(request, 'appTemp/employee_list.html', context)
+    return render(request, 'appTemp/employee/employee_list.html', context)
 
 @login_required
 def employee_add(request):
