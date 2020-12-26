@@ -1,0 +1,40 @@
+{% extends "appTemp/base_generic.html" %}
+
+{% block content %}
+    <h1>All Employment Page</h1>
+    <p>Registered employment in this school:</p>
+    <form method="POST" action="" class="form-inline">
+        {% csrf_token %}
+        <input style="width: 700px;" name="name" type="text" class="form-control" placeholder="Type to search ...."/>
+        <select name="searchby" class="form-control">
+            <option value="employment_name">Employment Name</option>
+            <option value="employment_description">Description</option>
+        </select>
+        <button type="submit" class="btn btn-info">Search</button>
+    </form>
+    <br/>
+    <table class="table table-hover">
+        <thead>
+            <tr class="active">
+                <td><strong>Employment Name</strong></td>
+                <td><strong>Description</strong></td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for employment in employment_list %}
+            <tr>
+                <td>{{ employment.employment_name }}</td>
+                <td>{{ employment.employment_description }}</td>
+                <td>
+                    <a href="{% url 'employment_edit' employment.employment_id %}" class="btn btn-success">Edit</a>
+                    <a href="{% url 'employment_delete' employment.employment_id %}" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br/>
+    <p>
+        <a href="{% url 'employment_add' %}" class="btn btn-info">Add New Employment</a>
+    </p>
+{% endblock %}
