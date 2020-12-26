@@ -26,7 +26,8 @@ def index(request):
                 [email],
                 fail_silently=True,
             )
-        return HttpResponseRedirect(reverse('login'))  # show login page if successful
+            return HttpResponseRedirect(reverse('login'))  # show login page if successful
+
     data = {
         'user_exists_error': msg,
     }
