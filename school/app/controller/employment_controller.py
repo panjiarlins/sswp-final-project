@@ -5,6 +5,7 @@ from django.forms.models import model_to_dict
 from django.contrib.auth.decorators import login_required
 from app.models import Employment
 from app.forms import EmploymentForm
+from django.core.paginator import Paginator
 
 def employment_list(request):
     if request.method == 'POST':
@@ -17,8 +18,13 @@ def employment_list(request):
             employments = Employment.objects.filter(employment_description__contains=name).order_by('employment_name')
     else:
         employments = Employment.objects.all().order_by('employment_name')
+    
+    paginator = Paginator(employments, 5)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
     context = {
-        'employment_list' : employments,
+        'employment_list' : page_obj,
     }
     return render(request, 'appTemp/employment/employment_list.html', context)
 

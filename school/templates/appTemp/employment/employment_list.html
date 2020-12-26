@@ -37,4 +37,25 @@
     <p>
         <a href="{% url 'employment_add' %}" class="btn btn-info">Add New Employment</a>
     </p>
+    <center>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                {% if employment_list.has_previous %}
+                    <li><a href="?page=1" class="page-link">&laquo; First</a></li>
+                    <li><a href="?page={{ employment_list.previous_page_number }}" class="page-link">Previous</a></li>
+                {% endif %}
+
+                <li>
+                    <span class="current page-item">
+                        Page {{ employment_list.number }} of {{ employment_list.paginator.num_pages }}
+                    </span>
+                </li>
+
+                {% if employment_list.has_next %}
+                    <li><a href="?page={{ employment_list.next_page_number }}" class="page-link">Next</a></li>
+                    <li><a href="?page={{ employment_list.paginator.num_pages }}" class="page-link">Last &raquo;</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </center>
 {% endblock %}
