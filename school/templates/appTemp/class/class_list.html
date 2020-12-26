@@ -41,4 +41,25 @@
     <p>
         <a href="{% url 'class_add' %}" class="btn btn-info">Add New Class</a>
     </p>
+    <center>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                {% if class_list.has_previous %}
+                    <li><a href="?page=1" class="page-link">&laquo; First</a></li>
+                    <li><a href="?page={{ class_list.previous_page_number }}" class="page-link">Previous</a></li>
+                {% endif %}
+
+                <li>
+                    <span class="current page-item">
+                        Page {{ class_list.number }} of {{ class_list.paginator.num_pages }}
+                    </span>
+                </li>
+
+                {% if class_list.has_next %}
+                    <li><a href="?page={{ class_list.next_page_number }}" class="page-link">Next</a></li>
+                    <li><a href="?page={{ class_list.paginator.num_pages }}" class="page-link">Last &raquo;</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </center>
 {% endblock %}

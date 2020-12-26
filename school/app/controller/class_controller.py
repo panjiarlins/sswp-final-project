@@ -5,6 +5,7 @@ from django.forms.models import model_to_dict
 from django.contrib.auth.decorators import login_required
 from app.models import Class
 from app.forms import ClassForm
+from django.core.paginator import Paginator
 
 def class_list(request):
     if request.method == 'POST':
@@ -17,8 +18,13 @@ def class_list(request):
             classes = Class.objects.filter(class_batch__contains=name).order_by('-class_batch')
     else:
         classes = Class.objects.all().order_by('-class_batch')
+    
+    paginator = Paginator(classes, 5)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+
     context = {
-        'class_list' : classes,
+        'class_list' : page_obj,
     }
     return render(request, 'appTemp/class/class_list.html', context)
 
