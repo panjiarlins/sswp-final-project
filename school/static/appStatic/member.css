@@ -1,0 +1,267 @@
+
+/*------------------------------------------------------
+    HOME PAGE
+-------------------------------------------------------- */
+.text-center img{
+    width: 200px;
+    margin-left: 350px;
+}
+.aside img{
+    width: 350px;
+    text-align: center;
+}
+.student1{
+    float:left;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+.student2{
+    float:left;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    margin-left: 50px;
+}
+.student3{
+    float:left;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    margin-left: 50px;
+}
+
+/*------------------------------------------------------
+    COVID NEWS
+-------------------------------------------------------- */
+
+.news img{
+    width: 300px;
+    text-align: center;
+}
+
+.news1{
+    float:left;
+    max-width: 340px;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow: auto;
+}
+
+.news2{
+    float:left;
+    max-width: 340px;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    margin-left: 30px;
+    overflow: auto;
+}
+
+.news3{
+    float:left;
+    max-width: 340px;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    margin-left: 30px;
+    overflow: auto;
+}
+
+.news4{
+    float:left;
+    max-width: 340px;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    margin-left: 30px;
+    overflow: auto;
+}
+
+.news5{
+    float:left;
+    max-width: 340px;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    margin-left: 30px;
+    overflow: auto;
+    margin-top: -10px;
+}
+
+.news6{
+    float:left;
+    max-width: 340px;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    overflow: auto;
+    margin-top: 25px;
+}
+
+.news7{
+    float:left;
+    max-width: 340px;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    margin-left: 30px;
+    overflow: auto;
+    margin-top: 15px;
+}
+
+.news8{
+    float:left;
+    max-width: 340px;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    margin-left: 30px;
+    overflow: auto;
+    margin-top: 25px;
+}
+
+/*------------------------------------------------------
+    ABOUT US
+-------------------------------------------------------- */
+.data{
+    width: 90%;
+    padding: 10px;
+    height: 1000px;
+    background: rgb(219, 168, 66);
+    color:#fff;
+    text-align: center;
+    border-radius: 25px;
+    margin-top: 40px;
+}
+
+.data img{
+    width: 200px;
+    margin-left: 20px;
+    text-align: center;
+    border-radius: 15px;
+    margin-top: -10px;
+    
+}
+.data h4{
+    text-align: center ;
+    margin-left: 25px;
+}
+
+.story {
+    text-align: center;
+    padding: 5px;
+    width: 90%;
+    background: #374785;
+    color: #fff;
+    border-radius: 25px;
+    margin-top: 40px;
+}
+.story p{
+    color:#fff;
+}
+.panji {
+    position: absolute;
+}
+.richard {
+    position: absolute;
+    margin-top: 300px;
+
+}
+.richard p{
+    position: absolute;
+    width: 900px;
+    margin-top: -195px;
+    margin-left: 250px;
+    color:#fff;
+    text-align: left;
+    padding: 5px;
+
+}
+.wchen {
+    position: absolute;
+    margin-top: 600px;
+}
+
+.wchen p{
+    position: absolute;
+    width: 900px;
+    margin-top: -200px;
+    margin-left: 250px;
+    color: #fff;
+    text-align: left;
+    padding: 5px;
+
+}
+
+/*------------------------------------------------------
+    CONTACT US
+-------------------------------------------------------- */
+
+.group-msg{
+    position: absolute;
+    margin-left: 600px;
+    background-color: rgb(219, 168, 66);
+    color: #fff;
+    border-radius: 25px;
+    padding: 20px;
+}
+
+.biodata{
+    position: absolute;
+    width: 550px;
+    background-color: #374785;
+    color: #fff;
+    border-radius: 25px;
+    padding: 20px;
+    height: 515px;
+}
+
+.biodata h3{
+    margin-top: -10px;
+}
+
+.group-msg h3{
+    margin-top: -10px;
+}
+
+.P{
+    margin-left: 20px;
+    font-size: 16px;
+}
+.R{
+    margin-left: 20px;
+    font-size: 16px;
+}
+.W{
+    margin-left: 20px;
+    font-size: 16px;
+}
+
+.R p{
+    margin-top: 5px;
+    margin-left: 20px;
+    font-size: 14px;
+    color: #fff;
+}
+.P p{
+    margin-top: 5px;
+    margin-left: 20px;
+    font-size: 14px;
+    color: #fff;
+}
+.W p{
+    margin-top: 5px;
+    margin-left: 20px;
+    font-size: 14px;
+    color: #fff;
+}
+
+.button {
+    text-align:right;
+}
+
+.isi{
+    padding:5px;
+}

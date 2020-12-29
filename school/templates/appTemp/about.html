@@ -1,0 +1,51 @@
+{% extends "appTemp/base_generic.html" %}
+
+{% block content %}
+<h1>About Us</h1>
+<div class="story">
+    {% load static %}
+    <u><h3>Our Story</h3></u>
+    <p>
+        In this website you could do a simple School Management System with a fews of tools, in purpose to help organize your school database.
+        This website was created by three developers and chaired by Panji Arlin along with his members Richard Owen and Wilbert Chen.
+        Our purpose in creating this website is to obtain grades in Server Side Internet Programming subject. <br><br>
+        
+        We really appreciate your presence in this website. Your ideas and suggestions will be saved and evaluated in order to develop this website.<br>
+        And Special Thanks to our lecturer, Sir Willem to teach us in this semester at this subject.<br><br>
+    </p>
+</div>
+<div class="data">
+    <u><h3>Personal Data</h3></u>
+    <div class="panji">
+    {% load static %}
+    <h4>Panji Arlin S</h4><br>
+    <img src="{% static 'appStatic/panji.jpg' %}" alt="panji.jpg"><br><br>
+        
+    </div>
+    <div class="richard">
+    {% load static %}
+    <h4>Richard Owen H</h4> <br>
+    <img src="{% static 'appStatic/richard.jpg' %}" alt="Richard.jpg">
+    <p>Hello Everyone,<br>
+        My name is Richard Owen Hendarto and I was majoring Information Technology (IT) batch 2019 at President University.
+        It nice to hear you guys visiting our website and keep using it. We very hope that this website could help you in manage your school database.
+        Any suggestions and recommandation? You could contact me via email at <u><a href="mailto:richard.hendarto@student.president.ac.id">richard.hendarto@student.president.ac.id.</a></u><br><br>
+        See you next time...
+    </p>   
+
+    </div>
+    <div class="wchen">
+    {% load static %}
+    <h4>Wilbert Chen</h4> <br>
+    <img src="{% static 'appStatic/wilbert.jpg' %}" alt="wilbert.jpg"><br><br>
+    <p>Hello Everyone,<br>
+        My name is Wilbert Chen and I was majoring Information Technology (IT) batch 2019 at President University.
+        I hope this website could be useful and inspire you to make a website too.
+        Any questions or suggestions? You could contact me via email at <u><a href="mailto:wilbert.chen@student.president.ac.id">wilbert.chen@student.president.ac.id.</a></u><br><br>
+        See you next time...
+    </p>      
+    </div>
+
+</div>
+
+{% endblock %}

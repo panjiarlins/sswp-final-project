@@ -2,10 +2,11 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import Subject, Employment, Employee, Student, Extracurricular, Class
+from .models import Subject, Employment, Employee, Student, Extracurricular, Class, Contact
 admin.site.register(Subject)
 admin.site.register(Employment)
 admin.site.register(Employee)
 admin.site.register(Student)
 admin.site.register(Class)
 admin.site.register(Extracurricular)
+admin.site.register(Contact)

@@ -3,7 +3,8 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.forms.models import model_to_dict
 from django.contrib.auth.decorators import login_required
-from .models import Subject, Employee, Student, Class, Employment, Extracurricular
+from .models import Subject, Employee, Student, Class, Employment, Extracurricular, Contact
+
 # Create your views here.
 import requests, ast
 def covid_info(request):
@@ -30,3 +31,19 @@ def index(request):
         'total_visit': num_visits,
     }
     return render(request, 'appTemp/index.html', context)
+
+def about(request):
+
+    return render(request, 'appTemp/about.html')
+
+def contact(request):
+    if request.method=="POST":
+        contact = Contact()
+        name=request.POST.get('name')
+        email=request.POST.get('email')
+        msg=request.POST.get('msg')
+        contact.name = name
+        contact.email = email
+        contact.msg = msg
+        contact.save()
+    return render(request, 'appTemp/contact.html')

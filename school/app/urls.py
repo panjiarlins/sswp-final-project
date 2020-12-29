@@ -13,6 +13,8 @@ urlpatterns = [
     path('covid_info/', views.covid_info, name='covid_info'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('register/', registration_controller.index, name='register'),
+    path('about/', views.about, name='about'),
+    path('contact/', views.contact, name='contact'),
 
     path('subject/', subject_controller.subject_list, name='subject'),
     path('subject/add/', subject_controller.subject_add, name='subject_add'),
