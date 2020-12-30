@@ -1,22 +1,23 @@
 {% extends 'appTemp/base_generic.html' %}
 
 {% block content %}
-<div class="col-12">
+<div class="form">
+    <div class="col-12">
     <div class="row text-center">
         <div class="col-12">
             {% if form.errors %}
                 {% if user_exists_error %}
-                <p>{{ user_exists_error }}</p>
+                <h1>{{ user_exists_error }}</h1>
                 {% else %}
-                <p>Your username and password didn't match. Please try again.</p>
+                <h1>Your username and password didn't match. Please try again.</h1>
                 {% endif %}
             {% endif %}
             {% if next %}
                 {% if user.is_authenticated %}
-                <p>Your account doesn't have access to this page. To proceed,
-                    please login with an account that has access.</p>
+                <h1>Your account doesn't have access to this page. To proceed,
+                    please login with an account that has access.</h1>
                 {% else %}
-                <p>Please login to see this page.</p>
+                <h1>Please login to see this page.</h1>
                 {% endif %}
             {% endif %}
         </div>
@@ -26,26 +27,27 @@
             <form method="post" action="{% url 'login' %}">
                 {% csrf_token %}
                 <div class="row">
-                    <div class="col-6 text-right">
-                        {{ form.username.label_tag }}
-                    </div>
                     <div class="col-6 text-left">
-                        {{ form.username }}
+                        {{ form.username.label_tag }}
+                        <div class="textbox">
+                            {{ form.username }}
+                        </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-6 text-right">
-                        {{ form.password.label_tag }}
-                    </div>
                     <div class="col-6 text-left">
-                        {{ form.password }}
+                        {{ form.password.label_tag }}
+                        <div class="textbox">
+                            {{ form.password }}
+                        </div>
                     </div>
                 </div>
-                <input type="submit" value="login" />
+                <button type="submit" value="login" />Login</button>
                 <input type="hidden" name="next" value="{{ next }}" />
             </form>
-            <p>Don't have an account? <a href="{% url 'register' %}">Sign Up</a></p>
+            <p class="sub">Don't have an account? <a href="{% url 'register' %}">Sign Up</a></p>
         </div>
+    </div>
     </div>
 </div>
 {% endblock %}

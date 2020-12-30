@@ -7,38 +7,40 @@
 {% endblock %}
 
 {% block content %}
+<div class="form">
 <div class="col-12">
     <div class="row text-center">
         <div class="col-12 text-center">
             <form action="" method="post">
                 {% csrf_token %}
                 <div class="row">
-                    <div class="col-6 text-right">
+                    <div class="col-6 text-left">
                         <label for="username">Username</label>
-                    </div>
-                    <div class="col-6 text-left">
-                        <input type="text" name="username"/>
+                        <div class="textbox">
+                            <input type="text" name="username"/>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-6 text-right">
+                    <div class="col-6 text-left">
                         <label for="email">E-Mail</label>
-                    </div>
-                    <div class="col-6 text-left">
-                        <input type="text" name="email"/>
+                        <div class="textbox">
+                            <input type="text" name="email"/>
+                        </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-6 text-right">
-                        <label for="password">Password</label>
-                    </div>
                     <div class="col-6 text-left">
-                        <input type="password" name="password"/>
+                        <label for="password">Password</label>
+                        <div class="textbox">
+                            <input type="password" name="password"/>
+                        </div>
                     </div>
                 </div>
-                <input type="submit" value="Register"/>
+                <button type="submit" value="Register"/>Register</button>
             </form>
         </div>
     </div>
+</div>
 </div>
 {% endblock %}
