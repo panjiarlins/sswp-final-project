@@ -195,15 +195,19 @@ a.article, a.article:hover {
     }
 }
 
-/* ---------------------------------------------------
-    REGISTRATION
------------------------------------------------------ */
+.index{
+    width: 350px;
+    z-index: +1;
+    padding: 10px 50px;
+    box-sizing: border-box;
+    background-color: #374785;
+    color: #fff;
+    border-radius: 10px;
+    box-shadow: 3px 3px 10px rgb(119, 119, 119);
+}
+
 .form{
     width: 350px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -40%);
     z-index: +1;
     padding: 10px 50px;
     box-sizing: border-box;
@@ -259,67 +263,4 @@ a.article, a.article:hover {
 }
 .sub{
     color: rgb(199, 199, 199);
-}
-
-/* ---------------------------------------------------
-    HOME
------------------------------------------------------ */
-.home-row {
-	max-width: 1024px;
-    width: 90%;
-}
-
-.home-row-wrapper {
-	margin-bottom: 10rem;
-    padding-top: 50px;
-    box-sizing: border-box;
-    background-color: #7386D5;
-    border-radius: 10px;
-    z-index: +2;
-}
-
-.home-col-left {
-	padding: 5rem 0;
-	width: 100%;
-	z-index: 1;
-}
-
-.home-heading{
-	font-family: Helvetica, Arial, sans-serif;
-	font-weight: 600;
-	line-height: 1.15;
-	margin: 0 0 2rem;
-	font-size: 40px;
-}
-
-.home-text-left {
-	text-align: left;
-}
-
-.home-text {
-	font-family: Helvetica, Arial, sans-serif;
-	font-size: 16px;
-	font-weight: 400;
-	margin-bottom: 1.45rem;
-}
-
-.home-col-img{
-    position: absolute;
-    transform: translate(150%,-95%);
-	z-index: -1;
-}
-
-.index{
-    width: 350px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -40%);
-    z-index: +1;
-    padding: 10px 50px;
-    box-sizing: border-box;
-    background-color: #374785;
-    color: #fff;
-    border-radius: 10px;
-    box-shadow: 3px 3px 10px rgb(119, 119, 119);
 }
