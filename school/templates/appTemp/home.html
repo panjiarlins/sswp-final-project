@@ -1,19 +1,8 @@
 {% extends "appTemp/base_generic.html" %}
 
 {% block content %}
-<section class="home-row-wrapper">
-    <div class="home-row">
-        <div class="home-col-left">
-            <h1 class="home-heading home-text-left">Selamat Datang di<br/>SMA Negeri 1 Indonesia</h1>
-            <p class="home-text home-text-left">SMA bermutu yang menghasilkan SDM bermutu danberdaya saing tinggi<br/><strong>Belajarlah seolah engkau hidup selamanya</strong></p>
-        </div>
-        <div class="home-col-right" role="presentation">
-            <div class="home-col-img">
-              {% load static %}
-              <!--  <img src="appStatic/logo-tut-wuri-handayani.png" width="380px" height="380px">https://pngimage.net/wp-content/uploads/2018/06/logo-tut-wuri-handayani-sd-png-1.png-->
-                <img src="{% static 'appStatic/logo-tut-wuri-handayani.png' %}" width="350px" height="350px">  
-            </div>
-        </div>
+    <div class="text-center" style="margin-left: 200px;">
+        {% load static %}
+        <img src="{% static 'appStatic/logo-tut-wuri-handayani.png' %}" alt="logo-tut-wuri-handayani.png">
     </div>
-</section>    
 {% endblock %}

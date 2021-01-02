@@ -13,13 +13,13 @@ def employee_list(request):
         req = request.POST.dict()
         name = req['name']
         if searchby == 'employee_name':
-            employees = Employee.objects.filter(employee_name__contains=name).order_by('-employee_DOB')
+            employees = Employee.objects.filter(employee_name__icontains=name).order_by('-employee_DOB')
         elif searchby == 'employee_email':
-            employees = Employee.objects.filter(employee_email__contains=name).order_by('-employee_DOB')
+            employees = Employee.objects.filter(employee_email__icontains=name).order_by('-employee_DOB')
         elif searchby == 'employee_phone':
-            employees = Employee.objects.filter(employee_phone__contains=name).order_by('-employee_DOB')
+            employees = Employee.objects.filter(employee_phone__icontains=name).order_by('-employee_DOB')
         elif searchby == 'employee_address':
-            employees = Employee.objects.filter(employee_address__contains=name).order_by('-employee_DOB')
+            employees = Employee.objects.filter(employee_address__icontains=name).order_by('-employee_DOB')
     else:
         employees = Employee.objects.all().order_by('-employee_DOB')
     

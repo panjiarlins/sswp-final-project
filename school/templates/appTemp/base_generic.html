@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="{% static 'appStatic/school.css' %}">
 </head>
 <body>
-    <div style=" margin-top: 150px; margin-left: 400px; z-index: 1;">{% block content %}{% endblock %}</div>
+    <div style="position: absolute; margin-top: 150px; margin-left: 400px; z-index: 1;">{% block content %}{% endblock %}</div>
     <div class="wrapper">
         <!-- Sidebar Holder -->
         <nav id="sidebar">
@@ -123,7 +123,6 @@
                             <span>Menu</span>
                         </button>
                     </div>
-                    
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
                             {% if user.is_authenticated %}

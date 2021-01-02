@@ -13,9 +13,9 @@ def class_list(request):
         req = request.POST.dict()
         name = req['name']
         if searchby == 'class_name':
-            classes = Class.objects.filter(class_name__contains=name).order_by('-class_batch')
+            classes = Class.objects.filter(class_name__icontains=name).order_by('-class_batch')
         elif searchby == 'class_batch':
-            classes = Class.objects.filter(class_batch__contains=name).order_by('-class_batch')
+            classes = Class.objects.filter(class_batch__icontains=name).order_by('-class_batch')
     else:
         classes = Class.objects.all().order_by('-class_batch')
     
