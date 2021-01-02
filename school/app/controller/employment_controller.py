@@ -13,9 +13,9 @@ def employment_list(request):
         req = request.POST.dict()
         name = req['name']
         if searchby == 'employment_name':
-            employments = Employment.objects.filter(employment_name__contains=name).order_by('employment_name')
+            employments = Employment.objects.filter(employment_name__icontains=name).order_by('employment_name')
         else:
-            employments = Employment.objects.filter(employment_description__contains=name).order_by('employment_name')
+            employments = Employment.objects.filter(employment_description__icontains=name).order_by('employment_name')
     else:
         employments = Employment.objects.all().order_by('employment_name')
     

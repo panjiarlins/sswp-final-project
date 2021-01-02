@@ -13,9 +13,9 @@ def subject_list(request):
         req = request.POST.dict()
         name = req['name']
         if searchby == 'subject_name':
-            subjects = Subject.objects.filter(subject_name__contains=name).order_by('subject_name')
+            subjects = Subject.objects.filter(subject_name__icontains=name).order_by('subject_name')
         else:
-            subjects = Subject.objects.filter(subject_description__contains=name).order_by('subject_name')
+            subjects = Subject.objects.filter(subject_description__icontains=name).order_by('subject_name')
     else:
         subjects = Subject.objects.all().order_by('subject_name')
     

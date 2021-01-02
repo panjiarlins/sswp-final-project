@@ -13,9 +13,9 @@ def extracurricular_list(request):
         req = request.POST.dict()
         name = req['name']
         if searchby == 'extracurricular_name':
-            extracurriculars = Extracurricular.objects.filter(extracurricular_name__contains=name).order_by('extracurricular_name')
+            extracurriculars = Extracurricular.objects.filter(extracurricular_name__icontains=name).order_by('extracurricular_name')
         elif searchby == 'extracurricular_description':
-            extracurriculars = Extracurricular.objects.filter(extracurricular_description__contains=name).order_by('extracurricular_name')
+            extracurriculars = Extracurricular.objects.filter(extracurricular_description__icontains=name).order_by('extracurricular_name')
     else:
         extracurriculars = Extracurricular.objects.all().order_by('extracurricular_name')
     

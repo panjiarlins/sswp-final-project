@@ -13,13 +13,13 @@ def student_list(request):
         req = request.POST.dict()
         name = req['name']
         if searchby == 'student_name':
-            students = Student.objects.filter(student_name__contains=name).order_by('-student_DOB')
+            students = Student.objects.filter(student_name__icontains=name).order_by('-student_DOB')
         elif searchby == 'student_email':
-            students = Student.objects.filter(student_email__contains=name).order_by('-student_DOB')
+            students = Student.objects.filter(student_email__icontains=name).order_by('-student_DOB')
         elif searchby == 'student_phone':
-            students = Student.objects.filter(student_phone__contains=name).order_by('-student_DOB')
+            students = Student.objects.filter(student_phone__icontains=name).order_by('-student_DOB')
         elif searchby == 'student_address':
-            students = Student.objects.filter(student_address__contains=name).order_by('-student_DOB')
+            students = Student.objects.filter(student_address__icontains=name).order_by('-student_DOB')
     else:
         students = Student.objects.all().order_by('-student_DOB')
     
