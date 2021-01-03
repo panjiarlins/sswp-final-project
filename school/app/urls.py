@@ -1,19 +1,13 @@
 from django.urls import path, include
 from . import views
-from .controller import registration_controller
-from .controller import subject_controller
-from .controller import class_controller
-from .controller import extracurricular_controller
-from .controller import employment_controller
-from .controller import employee_controller
-from .controller import student_controller
-
+from .controller import registration_controller, subject_controller, class_controller, extracurricular_controller, employment_controller
+from .controller import employee_controller, student_controller, api_controller, about_controller
 urlpatterns = [
     path('', views.index, name='index'),
-    path('covid_info/', views.covid_info, name='covid_info'),
+    path('covid_info/', api_controller.covid_info, name='covid_info'),
     path('accounts/', include('django.contrib.auth.urls')),
     path('register/', registration_controller.index, name='register'),
-    path('about/', views.about, name='about'),
+    path('about/', about_controller.about, name='about'),
     path('contact/', views.contact, name='contact'),
 
     path('subject/', subject_controller.subject_list, name='subject'),

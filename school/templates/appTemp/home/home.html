@@ -1,0 +1,41 @@
+{% extends "appTemp/base_generic.html" %}
+
+{% load static %}
+{% block content %}
+    <div>
+        <center>
+            <img class="tut-wuri-handayani" src="{% static 'appStatic/logo-tut-wuri-handayani.png' %}" alt="logo-tut-wuri-handayani.png">
+            <h2>Welcome to SMA Negeri 1 Indonesia Database Website</h2>
+        </center>
+    </div><br>
+    <div class="aside">
+        <h4>Made by:</h4>
+        <div class="row">
+            <div class="col-md-4 student">
+                <img src="{% static 'appStatic/panji.jpg' %}" alt="panji.jpg"><br><br>
+                Name &emsp;  &emsp;&nbsp;: &nbsp;Panji Arlin S <br>
+                ID Number&nbsp;&nbsp;: &nbsp;001201900037<br><br>
+                <blockquote class="blockquote">
+                    <footer>panji.saputra@student.president.ac.id</footer>
+                </blockquote>
+            </div>
+            <div class="col-md-4 student">
+                <img src="{% static 'appStatic/richard.jpg' %}" alt="Richard.jpg"><br><br>
+                Name &emsp;  &emsp;&nbsp;: &nbsp;Richard Owen H <br>
+                ID Number&nbsp;&nbsp;: &nbsp;001201900026<br><br>
+                <blockquote class="blockquote">
+                    <footer>richardowenh@gmail.com</footer>
+                </blockquote>
+            </div>
+            <div class="col-md-4 student">
+                <img src="{% static 'appStatic/wilbert.jpg' %}" alt="wilbert.jpg"><br><br>
+                Name &emsp;  &emsp;&nbsp;: &nbsp;Wilbert Chen<br>
+                ID Number&nbsp;&nbsp;: &nbsp;001201900046<br><br>
+                <blockquote class="blockquote">
+                    <footer>wilbert.chen@student.president.ac.id</footer>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br>
+{% endblock %}

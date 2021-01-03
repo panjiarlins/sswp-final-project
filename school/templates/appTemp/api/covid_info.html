@@ -1,0 +1,63 @@
+{% extends "appTemp/base_generic.html" %}
+
+{% load static %}
+{% block content %}
+    <h1>Information</h1>
+    <p>Update Covid-19 Information in {{ covid.name }} Today</p>
+    <ul class="list-group" style="width: 600px;">
+        <li class="list-group-item">
+            <div style="white-space:pre">Positive Cases&#9;: {{ covid.positif }}</div>
+            <div style="white-space:pre">Recovery&#9;&#9;: {{ covid.sembuh }}</div>
+            <div style="white-space:pre">Death&#9;&#9;&#9;: {{ covid.meninggal }}</div>
+            <div style="white-space:pre">Treated&#9;&#9;&#9;: {{ covid.dirawat }}</div>
+        </li>
+    </ul>
+    <div>
+        <h3>Latest News:</h3>
+        <div class="row">
+            {% for i in news.data|slice:3 %}
+                <a class="col-md-4 news" href="{{ i.link }}" target="_blank">
+                    <div>
+                        <img src="{{ i.poster }}" alt="{{ i.poster }}"><br><br>
+                        <h5>{{ i.judul }}</h5>
+                        {{ i.waktu }}
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+        <div class="row">
+            {% for i in news.data|slice:'3:6' %}
+                <a class="col-md-4 news" href="{{ i.link }}" target="_blank">
+                    <div>
+                        <img src="{{ i.poster }}" alt="{{ i.poster }}"><br><br>
+                        <h5>{{ i.judul }}</h5>
+                        {{ i.waktu }}
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+        <div class="row">
+            {% for i in news.data|slice:'6:9' %}
+                <a class="col-md-4 news" href="{{ i.link }}" target="_blank">
+                    <div>
+                        <img src="{{ i.poster }}" alt="{{ i.poster }}"><br><br>
+                        <h5>{{ i.judul }}</h5>
+                        {{ i.waktu }}
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+        <div class="row">
+            {% for i in news.data|slice:'9:12' %}
+                <a class="col-md-4 news" href="{{ i.link }}" target="_blank">
+                    <div>
+                        <img src="{{ i.poster }}" alt="{{ i.poster }}"><br><br>
+                        <h5>{{ i.judul }}</h5>
+                        {{ i.waktu }}
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+    <br><br><br><br>
+{% endblock %}

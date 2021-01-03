@@ -14,7 +14,7 @@ def index(request):
         email = req['email']  # this is our target email
         try:  # we try to find existing user first, if exists show error
             user = User.objects.get(username=username)
-            msg = 'Username or E-Mail is already registered'
+            msg = 'Username is already registered'
         except User.DoesNotExist:  # user not found, then register, send email
             user = User.objects.create_user(username, email, password)  # register user
             user.save()  # save to db

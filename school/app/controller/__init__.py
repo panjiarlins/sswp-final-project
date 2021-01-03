@@ -5,3 +5,5 @@ from . import student_controller
 from . import class_controller
 from . import extracurricular_controller
 from . import employment_controller
+from . import api_controller
+from . import about_controller
